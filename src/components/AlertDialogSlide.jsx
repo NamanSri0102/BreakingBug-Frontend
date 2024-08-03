@@ -6,6 +6,10 @@ const AlertDialogSlide = ({ dialog, showDialog, setShowDialog }) => {
     const handleClose = () => {
         setShowDialog(false);
     };
+    // const taskHandler = () => { // or we can create a task handler function
+    //     showDialog(false);
+    // };
+        
     return (
         <Dialog
             open={showDialog}
@@ -28,7 +32,7 @@ const AlertDialogSlide = ({ dialog, showDialog, setShowDialog }) => {
                 <div>
                     <RedButton onClick={() => {
                         handleClose()
-                        taskHandler()
+                       // taskHandler() // taskhandler is not defined either we can remove this or we can make a functon taskHandler
                     }}>Yes</RedButton>
                 </div>
             </DialogActions>
