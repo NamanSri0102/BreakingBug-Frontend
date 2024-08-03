@@ -42,14 +42,14 @@ const Products = ({}) => {
   if (!responseSearch) {
     return <div>Product not found</div>;
   }
-
+const navigate =useNavigate();// changes made
   return (
     <>
       <ProductGrid container spacing={3}>
         {currentItems.map((data, index) => (
           <Grid item xs={12} sm={6} md={4}
             key={index}
-            onClick={() => navigate("/product/view/" + data._id)}
+            onClick={() => navigate("/product/view/" + data._id)} // navigate function is not made in the scope we have to make it
             sx={{ cursor: "pointer" }}
           >
             <ProductContainer>
