@@ -50,7 +50,7 @@ const Navbar = () => {
     const [isCartOpen, setIsCartOpen] = React.useState(false);
 
     // Cart
-    const handleOpen Cart = () => {
+    const handleOpenCart = () => { // THERE IS A SPACE IN BETWEEN THE handleOpen and Cart
         setIsCartOpen(true);
     };
 
