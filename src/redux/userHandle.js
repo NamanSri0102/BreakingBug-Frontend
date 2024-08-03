@@ -47,26 +47,14 @@ export const authUser = (fields, role, mode) => async (dispatch) => {
 export const addStuff = (address, fields) => async (dispatch) => {
     dispatch(authRequest());
 
-    try {
-        const result = await axios.post(`${process.env.REACT_APP_BASE_URL}/${address}`, fields, {
-            headers: { 'Content-Type': 'application/json' },---
-        });
-
-        if (result.data.message) {
-            dispatch(authFailed(result.data.message));
-        } else {
-            dispatch(stuffAdded());
-        }
-    } catch (error) {
-        dispatch(authError(error));
-    }
+   
 };
 
 export const updateStuff = (fields, id, address) => async (dispatch) => {
 
     try {
-        const result = await axios.put(`${process.env.REACT_APP_BASE_URL}/${address}/${id}`, fields, {
-
+        const result = await axios.post(`${process.env.REACT_APP_BASE_URL}/${address}/${id}`, fields, {
+// I think there should be the use of "post" not "put"
         });
         if (result.data.message) {
             dispatch(updateFailed(result.data.message));
