@@ -43,6 +43,7 @@ const Products = ({}) => {
     return <div>Product not found</div>;
   }
 const navigate =useNavigate();// changes made
+  const productData='';// a productData is initialize;
   return (
     <>
       <ProductGrid container spacing={3}>
@@ -86,7 +87,7 @@ const navigate =useNavigate();// changes made
 
       <Container sx={{ mt: 10, mb: 10, display: "flex", justifyContent: 'center', alignItems: "center" }}>
         <Pagination
-          count={Math.ceil(productData.length / itemsPerPage)}
+          count={Math.ceil(productData.length / itemsPerPage)} // productData is not made and we need to make it
           page={currentPage}
           color="secondary"
 
